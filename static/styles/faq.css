@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}   
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin-bottom: -5px;
+  background-image: url(./Images/faq.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  margin-left: -8px;
+  box-shadow: 0px 3px 20px -1px rgb(0, 17, 255);
+  width: 105vw;
+  background: rgb(255, 255, 255);
+}
+
+#image {
+  height: 4rem;
+  width: 20rem;
+  margin-left: -6rem;
+}
+
+#faq {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  background: -webkit-linear-gradient(rgb(2, 243, 2),rgb(189, 110, 6),rgb(255, 6, 6), rgb(9, 241, 241));
+  background-clip: content-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#hr {
+  background-color: red;
+  width: 80vw;
+}
+
+.section-center {
+  margin-top: 120px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  padding-bottom: 20px;
+}
+
+.question {
+  margin: auto;
+  background-color: rgb(0, 0, 0);
+  width: 60vw;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.question-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-family: 'Akaya Telivigala', cursive;
+  font-family: 'Redressed', cursive;
+  color: rgb(1, 212, 12);
+}
+
+hr {
+  background-color: white;
+}
+
+#btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#plus-icon, #cross-icon {
+  font-size: 25px;
+  color: rgb(255, 0, 0)
+}
+
+.question-text p{
+  margin-top: 10px;
+  color: aliceblue;
+  font-size: 18px;
+  font-family: monospace;
+}
+
+.question-text {
+  display: none;
+}
+.show-text .question-text {
+  display: block;
+}
+
+#cross-icon {
+  display: none;
+}
+
+.show-text #cross-icon {
+  display: inline;
+}
+
+.show-text #plus-icon {
+  display: none;
+}
+
+.footer {
+  display: flex;
+  background-color: rgb(2, 28, 77);
+  height: 80px;
+  color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .question {
+    width: 80vw;
+  }
+
+  #title {
+    font-size: 18px;
+  }
+
+  .footer {
+    text-align: center;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    <title>Alpha Taji Solutions | Home</title>
+  </head>
+  <body id="body">
+    <div class="nav">
+      <img id="image" src="../static/styles/Images/logo1.PNG">
+        <div class="links">
+          <a id="links" href="{{ url_for('about') }}">ABOUT US</a>
+          <a id="links" href="{{ url_for('services') }}">SERVICES</a>
+          <a id="links" href="{{ url_for('contact') }}">CONTACT</a>
+          <a id="links" href="{{ url_for('faq') }}">FAQ</a>
+        </div>
+        <div class="user">
+          <button id="sign-up">
+            <a id="btn-link" href="{{ url_for('signup') }}">
+              SIGN UP</a>
+          </button> 
+          <button id="sign-in">
+            <a id="btn-link" href="{{ url_for('login') }}">
+              SIGN IN</a>
+          </button>
+        </div>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+    </div>
+    <div class="box">
+      {{message}} {{name}}
+    </div>
+    <div class="container-1">
+      <div id="content">
+        <h1 id="heading">ALPHA TAJI SOLUTIONS</h1>
+        <p id="tagline">Redefining the loan system</p>
+        <a href="{{ url_for('services') }}#choose"><button id="btn">Learn more</button></a>
+      </div>
+    </div>
+    <div class="container-2">
+      <div class="overlay">
+        <h4 id="people">Find out why people choose us</h4>
+        <a href="{{ url_for('about') }}#choose"><button id="btn">Explore</button></a>
+      </div>
+    </div>
+    <div class="video">
+      <video loop autoplay>
+        <source src="../static/styles/images/video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="subscribe">
+      <div class="box1">
+        <h4 id="subscribe">Subscribe to our newsletter by becoming a member</h4>
+        <button id="button">
+          <a href="{{ url_for('signup') }}">SUBSCRIBE</a>
+        </button>
+      </div>
+    </div>
+    <div class="footer">
+      <h4>Copyright &copy; ALPHA TAJI SOLUTIONS LTD 2021. All Rights Reserved</h4>
+      <button class="top"><a href="#body">^</a></button>
+    </div>
+    <Script src="{{ url_for('static', filename='js/index.js') }}"></Script>
+  </body>
+</html>

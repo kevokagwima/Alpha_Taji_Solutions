@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/signup.css') }}">
+    <title>Alpha Taji Solutions | Sign Up</title>
+  </head>
+  <body>
+    <div class="nav">
+      <img id="image" src="../static/styles/Images/logo1.PNG">
+    </div>
+    <h4 id="heading">SIGN UP</h4>
+    <div class="container-1">
+      <form action="{{ url_for('register') }}", method="POST">
+        <div id="form">
+          <div class="message">
+            <p id="message">{{message}}</p>
+          </div>
+          <input type="text" name="fname" autocomplete="off" required placeholder="Enter your first name"><br>
+          <input type="text" name="sname" autocomplete="off" required placeholder="Enter your second name"><br>
+          <input type="text" name="lname" autocomplete="off" required placeholder="Enter your last name"><br>
+          <input type="email" name="email" autocomplete="off" required placeholder="Enter your email"><br>
+          <input type="number" name="phone" autocomplete="off" required placeholder="Enter your phone number"><br>
+          <input type="text" name="username" id="username" placeholder="Enter username" autocomplete="off" required><br>
+          <input type="password" name="password" id="password" placeholder="Enter password" autocomplete="off" required><br>
+          <button class="btn" type="submit">
+            <span class="button--text">SIGN UP</span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="box">
+      <p id="text">If already a member proceed to login</p>
+      <a id="link" href="{{ url_for('login')}}">Login</a>
+    </div>
+    <div class="footer">
+      <h4>Copyright &copy; ALPHA TAJI SOLUTIONS LTD 2021. All Rights Reserved</h4>
+    </div>
+    <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
+  </body>
+</html>

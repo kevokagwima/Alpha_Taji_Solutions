@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/contact.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Reggae+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Alpha Taji Solutions | Contact Us</title>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="{{ url_for('index') }}"><img id="image" src="../static/styles/Images/logo1.png"></a>
+    </div>
+    <div class="container-1">
+      <div class="mini-container-1">
+        <div class="overlay">
+          <h4 id="header">Address</h4>
+          <p id="text">Survey Of Kenya, Nairobi</p>
+          <h4 id="header">Email</h4>
+          <p id="text">Alphatajisolutions@gmail.ac.ke</p>
+          <h4 id="header">Phone 1</h4>
+          <p id="text">+254 753697415</p>
+          <h4 id="header">Phone 2</h4>
+          <p id="text">+254 769853215</p>
+          <h4 id="header">Phone 3</h4>
+          <p id="text">+254 762158957</p>
+        </div>
+      </div>
+      <div class="mini-container-2">
+        <h4 id="send">SEND US A MESSAGE</h4>
+        <form>
+          <div id="form">
+            <input type="text" id="input" autocomplete="off" placeholder="Enter your first name"><br>
+            <input type="text" id="input" autocomplete="off" placeholder="Enter your second name"><br>
+            <input type="email" id="input" autocomplete="off" placeholder="Enter your email"><br>
+            <input type="number" id="input" autocomplete="off" placeholder="Enter your phone number"><br>
+            <p id="member">If you're member check the box</p><br>
+            <input type="checkbox" id="checkbox1" name="member" value="member">
+            <label id="checkbox" for="member">Member</label><br><br>
+            <textarea id="textarea" rows="6" cols="56" placeholder="Enter message here..."></textarea><br>
+            <button id="btn" type="submit">SEND</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <h4>Feel free to contact us through our social media platforms</h4>
+      <div class="social">
+        <a id="social" href="https://www.facebook.com/alphatajisoultions" target="_blank" class="fa fa-facebook"></a>
+        <a id="social" href="https://twitter.com/ALPHATAJISOLUT1" target="_blank" class="fa fa-twitter"></a>
+        <a id="social" href="https://www.instagram.com/alphatajisolutions/" target="_blank" class="fa fa-instagram"></a>
+      </div>
+    </div>
+  </body>
+</html>

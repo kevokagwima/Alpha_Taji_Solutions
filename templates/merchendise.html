@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/merchendise.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Reggae+One&display=swap" rel="stylesheet">
+    <title>Alpha Taji Solutions | Merchendise</title>
+  </head>
+  <body id="body">
+    <div class="nav">
+      <a href="{{ url_for('index') }}"><img id="image" src="../static/styles/Images/logo1.png"></a>
+        <div class="links">
+          <a id="links" href="#hoodies">HOODIES</a>
+          <a id="links" href="#bags">BAGS</a>
+          <a id="links" href="#polos">POLOS</a>
+          <a id="links" href="#pillow">PILLOWS</a>
+          <a id="links" href="#masks">MASKS</a>
+        </div>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+    </div>
+    <h1 id="hoodies">Hoodies</h1>
+    <hr>
+    <div class="bag">
+      <div class="item">
+        <img src="../static/styles/images/black hoodie.png">
+        <h4>Black Hoodie</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/white hoodie.png">
+        <h4>White Hoodie</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/red hoodie.png">
+        <h4>Red Hoodie</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/blue hoodie.png">
+        <h4>Blue Hoodie</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/brown hoodie.png">
+        <h4>Brown Hoodie</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/pink hoodie.png">
+        <h4>Pink Hoodie</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/green hoodie.png">
+        <h4>Green Hoodie</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/maroon hoodie.png">
+        <h4>Maroon Hoodie</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/purple hoodie.png">
+        <h4>Purple Hoodie</h4>
+      </div>
+    </div>
+    <h1 id="bags">Bags</h1>
+    <hr>
+    <div class="bag">
+      <div class="item">
+        <img src="../static/styles/images/bag1.PNG">
+        <h4>White bag</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/bag2.PNG">
+        <h4>Black bag</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/bag3.PNG">
+        <h4>Grey bag</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/bag4.PNG">
+        <h4>Blue bag</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/bag5.PNG">
+        <h4>Pink bag</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/bag6.PNG">
+        <h4>Green bag</h4>
+      </div>
+    </div>
+    <h1 id="polos">Polo</h1>
+    <hr>
+    <div class="bag">
+      <div class="item">
+        <img src="../static/styles/images/blue polo.png">
+        <h4>Blue Polo</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/brown polo.png">
+        <h4>Brown Polo</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/white polo.png">
+        <h4>White Polo</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/pink polo.png">
+        <h4>Pink Polo</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/purple polo.png">
+        <h4>Purple Polo</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/green polo.png">
+        <h4>Green Polo</h4>
+      </div>
+    </div>
+    <h1 id="pillow">Pillows</h1> 
+    <hr>
+    <div class="pillow">
+      <div class="item">
+        <img src="../static/styles/images/pillow1.PNG">
+        <h4>White pillow</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/pillow2.PNG">
+        <h4>Blue pillow</h4>
+      </div>
+      <div class="item">
+        <img src="../static/styles/images/pillow3.PNG">
+        <h4>Black pillow</h4>
+      </div>
+    </div>
+    <h1 id="masks">Masks</h1> 
+    <hr>
+    <div class="mask">
+      <div class="item" id="item">
+        <img id="mask" src="../static/styles/images/mask1.PNG">
+        <h4>Black mask</h4>
+      </div>
+      <div class="item" id="item">
+        <img id="mask" src="../static/styles/images/mask2.PNG">
+        <h4>White mask</h4>
+      </div>
+    </div>
+    <div class="footer">
+      <h4>Copyright &copy; ALPHA TAJI SOLUTIONS LTD 2021. All Rights Reserved</h4>
+      <a id="link" href="{{ url_for('contact') }}">CONTACT US</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/merchendise.js') }}"></script>
+  </body>
+</html>

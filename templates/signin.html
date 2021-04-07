@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/signin.css') }}">
+    <title>Alpha Taji Solutions | Sign In</title>
+  </head>
+  <body>
+    <div class="nav">
+      <img id="image" src="../static/styles/Images/logo1.PNG">
+    </div>
+    <h4 id="heading">SIGN IN</h4>
+    <div class="container-1">
+      <form action="{{ url_for('authenticate') }}", method="POST">
+        <div id="form">
+          <div class="message">
+            <p id="message">{{message}}</p>
+          </div>
+          <div class="success">
+            <p id="message">{{success}}</p>
+          </div>
+          <h4 id="header">Confirm Your Identity</h4>
+          <input type="text" name="username" id="username" placeholder="Enter username" required autocomplete="off"><br>
+          <input type="password" name="password" id="password" placeholder="Enter password" required autocomplete="off"><br>
+          <button class="btn" type="submit">
+            <span class="button--text">SIGN IN</span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="box">
+      <p id="text">If not a member proceed to Sign Up</p>
+      <a id="link" href="{{ url_for('signup')}}">Sign Up</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/signin.js') }}"></script>
+  </body>
+</html>

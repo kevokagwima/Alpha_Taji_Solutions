@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/about us.css') }}">
+    <title>Alpha Taji Solutions | About Us</title>
+  </head>
+  <body id="body">
+    <div class="nav">
+      <a href="{{ url_for('index') }}">
+        <img id="image" src="../static/styles/Images/logo1.PNG">
+      </a>
+        <div class="links">
+          <a id="links" href="{{ url_for('services') }}">SERVICES</a>
+          <a id="links" href="{{ url_for('team') }}">MANAGEMENT TEAM</a>
+          <a id="links" href="{{ url_for('merchendise') }}">MERCHENDISE</a>
+        </div>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+    </div>
+    <div class="container-1">
+      <div id="container-1">
+        <h4 id="heading">Sacco Overview</h4>
+      </div>
+      <p id="paragraph">Alpha Taji Solutions Sacco was started in 2018 by <b>Sophie Mutua</b> then stationed at Survey of Kenya. In the same year it was registered and licensed as a limited savings and credit cooperative society. The Sacco is licensed by the Sacco Societies Regulatory Authority (SASRA) as a deposit taking Sacco. Since then, the Sacco has undergone various transformations and now boasts as one of the giant Sacco’s in the country.</p>
+      <p id="paragraph">The Annual Delegates Meeting (ADM) is the supreme governing authority of the Sacco. Delegates elect Board of Directors and the Supervisory Committee who run and oversee the organization on behalf of the members. Members are drawn from education institutions, other government departments and immediate families of the staff of these institutions. The Sacco offers both savings and credit services to this target group.</p>
+      <h4 id="heading">The mandate of the sacco</h4>
+      <hr>
+      <ol id="list">
+        <li>We provide advancing credit</li>
+        <li>We provide deposit taking services</li>
+        <li>We safeguard the shareholders assets</li>
+        <li>We ensure the building of members welfare</li>
+      </ol>
+      <p id="choose"></p>
+      <br>
+      <br>
+      <h4 id="heading">Our commitment to our members</h4>
+      <hr>
+      <ul id="lists">
+        <li><b>Service:</b>  We will provide you with professional, friendly services and treat you with dignity and fairness.</li>
+        <li><b>Information:</b> We will provide you with clear, relevant, timely information and help make informed decisions about your financial needs.</li>
+        <li><b>Security and privacy:</b> We will ensure you enjoy secure and reliable services. We will treat all your personal information as private and confidential.</li>
+        <li><b>Access to your money:</b> We will ensure you can easily and conveniently access financial services through our branches, ATMs, mobile and internet banking.</li>
+        <li><b>Customer care:</b> We shall always be available to respond to your queries, complaints and feedback at all branches during working hours at our customer care center.</li>
+        <li><b>Community support:</b> We shall always be available to respond to your queries, complaints and feedback at all branches during working hours at our customer care center.</li>
+      </ul>
+      <br>
+      <h2 id="heading">Our Vision and Mission</h2>
+      <h5 id="heading">Core purpose</h5>
+      <hr>
+      <p id="paragraph">We empower our members economically and socially by providing affordable financial services through mobilization of savings and advancing credit that improves their livelihood.</p>
+      <h5 id="heading">Vision</h5>
+      <hr>
+      <p id="paragraph">To be the leading Sacco in provision of excellent financial services.</p>
+      <h5 id="heading">Core values</h5>
+      <hr>
+      <ul id="lists">
+        <li>Integrity</li>
+        <li>Teamwork</li>
+        <li>Equality and Equity</li>
+        <li>Professionalim</li>
+        <li>Innovation and creativity</li>
+        <li>Social responsibility</li>
+      </ul>
+      <h5 id="heading">Mandate of the Sacco</h5>
+      <hr>
+      <ol id="list">
+        <li>Advancing credit</li>
+        <li>Deposit taking</li>
+        <li>Safeguarding shareholders assets</li>
+        <li>Up building members welfare</li>
+      </ol>
+    </div>
+    <div class="footer">
+      <h4>Copyright &copy; ALPHA TAJI SOLUTIONS LTD 2021. All Rights Reserved</h4>
+      <button class="top"><a href="#body">^</a></button>
+    </div>
+    <script src="{{ url_for('static', filename='js/about.js') }}"></script>
+  </body>
+</html>

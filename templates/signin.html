@@ -12,9 +12,11 @@
     <div class="container-1">
       <form action="{{ url_for('authenticate') }}", method="POST">
         <div id="form">
-          <div class="message">
-            <p id="message">{{message}}</p>
-          </div>
+          {% if message %}
+            <div class="message">
+              <p id="message">{{message}}</p>
+            </div>
+          {% endif %}
           <div class="success">
             <p id="message">{{success}}</p>
           </div>

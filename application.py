@@ -1,4 +1,3 @@
-import os
 from flask import Flask, render_template, request, send_file
 from models import *
 
@@ -6,6 +5,7 @@ app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = ('mssql://KEVINKAGWIMA/alphataji?driver=sql server?trusted_connection=yes')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = 'f4cedd9fad0d4aae6af66788'
 db.init_app(app)
 
 @app.route("/")
@@ -50,6 +50,7 @@ def register():
   phone = request.form.get("phone")
   username = request.form.get("username")
   password = request.form.get("password")
+  password1 = request.form.get("password1")
   
   member = (
     user(first_name=firstname,second_name=secondname,last_name=lastname,email=email,phone_number=phone,username=username,password=password
@@ -67,6 +68,9 @@ def register():
   username_exists = db.session.query(user).filter_by(username=username).first()
   if username_exists is not None:
     return render_template("signup.html", message="Username already exists. Try again")
+  
+  if password1 != password:
+    return render_template("signup.html", message="Passwords do not match")
 
   db.session.add(member)
   
@@ -82,15 +86,11 @@ def authenticate():
   username = request.form.get("username")
   password = request.form.get("password")
 
-  check_username = db.session.query(user.username).filter_by(username=username).first()
-  if check_username is None:
-    return render_template("signin.html", message="Invalid username")
+  check_user = db.session.query(user).filter_by(username=username, password=password).first()
+  if check_user is None:
+    return render_template("signin.html", message="Invalid credentials")
 
-  check_password = db.session.query(user.username).filter_by(password=password).first()
-  if check_password is None:
-    return render_template("signin.html", message="Invalid password")
-
-  return render_template("index.html", name=username, message="logged in as")
+  return render_template("index.html", name=username)
 
 @app.route('/download')
 def download_file():

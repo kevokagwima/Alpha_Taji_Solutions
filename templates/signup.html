@@ -10,18 +10,21 @@
     </div>
     <h4 id="heading">SIGN UP</h4>
     <div class="container-1">
-      <form action="{{ url_for('register') }}", method="POST">
+      <form method="POST" action="{{ url_for('register') }}">
         <div id="form">
           <div class="message">
-            <p id="message">{{message}}</p>
+            {% if message %}
+              <p id="message">{{message}}</p>
+            {% endif %}
           </div>
-          <input type="text" name="fname" autocomplete="off" required placeholder="Enter your first name"><br>
-          <input type="text" name="sname" autocomplete="off" required placeholder="Enter your second name"><br>
-          <input type="text" name="lname" autocomplete="off" required placeholder="Enter your last name"><br>
-          <input type="email" name="email" autocomplete="off" required placeholder="Enter your email"><br>
-          <input type="number" name="phone" autocomplete="off" required placeholder="Enter your phone number"><br>
-          <input type="text" name="username" id="username" placeholder="Enter username" autocomplete="off" required><br>
-          <input type="password" name="password" id="password" placeholder="Enter password" autocomplete="off" required><br>
+          <input type="text" name="fname" autocomplete="off" required placeholder="Enter your First Name"><br>
+          <input type="text" name="sname" autocomplete="off" required placeholder="Enter your Second Name"><br>
+          <input type="text" name="lname" autocomplete="off" required placeholder="Enter your Last Name"><br>
+          <input type="email" name="email" autocomplete="off" required placeholder="Enter your Email Address"><br>
+          <input type="number" name="phone" autocomplete="off" required placeholder="Enter your Phone Number"><br>
+          <input type="text" name="username" id="username" placeholder="Enter Username" autocomplete="off" required><br>
+          <input type="password" name="password" id="password" placeholder="Enter Password" autocomplete="off" required><br>
+          <input type="password" name="password1" id="password" placeholder="Confirm Password" autocomplete="off" required><br>
           <button class="btn" type="submit">
             <span class="button--text">SIGN UP</span>
           </button>

@@ -76,8 +76,12 @@ def register():
     flash("Enter a valid Phone Number")
     return render_template("signup.html")
   
-  if len(username) or len(password1) < 5:
-    flash("Username or password must be more than 5 characters long")
+  if len(username) < 5:
+    flash("Username must be more than 5 characters long")
+    return render_template("signup.html")
+
+  if len(password) < 5:
+    flash("password must be more than 5 characters long")
     return render_template("signup.html")
 
   if password1 != password:

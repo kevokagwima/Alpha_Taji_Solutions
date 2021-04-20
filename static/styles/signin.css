@@ -14,7 +14,6 @@ body {
   position: fixed;
   top: 0;
   margin-left: -8px;
-  box-shadow: 0px 3px 20px -1px rgb(0, 255, 64);
   width: 100%;
   background: #212121;
 }

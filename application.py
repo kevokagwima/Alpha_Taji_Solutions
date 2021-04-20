@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, send_file
-from models import *
+from flask import Flask, render_template, request, send_file, flash
+from models import user, db
 
 app = Flask(__name__)
 
@@ -59,18 +59,30 @@ def register():
 
   email_exists = db.session.query(user).filter_by(email=email).first()
   if email_exists is not None:
-    return render_template("signup.html", message="Email already exists. Try again")
+    flash("Email already exists. Please try another email")
+    return render_template("signup.html")
 
   phonenumber_exists = db.session.query(user).filter_by(phone_number=phone).first()
   if phonenumber_exists is not None:
-    return render_template("signup.html", message="Phone number already exists. Try again")
+    flash("Phone number already exists. Please try another Phone number")
+    return render_template("signup.html")
   
   username_exists = db.session.query(user).filter_by(username=username).first()
   if username_exists is not None:
-    return render_template("signup.html", message="Username already exists. Try again")
+    flash("Username already exists. Please try another username")
+    return render_template("signup.html")
+
+  if len(phone) != 10:
+    flash("Enter a valid Phone Number")
+    return render_template("signup.html")
   
+  if len(username) or len(password1) < 5:
+    flash("Username or password must be more than 5 characters long")
+    return render_template("signup.html")
+
   if password1 != password:
-    return render_template("signup.html", message="Passwords do not match")
+    flash("Passwords do not match")
+    return render_template("signup.html")
 
   db.session.add(member)
   

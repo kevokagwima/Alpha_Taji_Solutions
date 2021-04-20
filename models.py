@@ -1,8 +1,4 @@
-from operator import length_hint
-import os
-
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask
 
 db = SQLAlchemy()
 

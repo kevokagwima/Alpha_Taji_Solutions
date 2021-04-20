@@ -41,12 +41,12 @@ body {
 .message {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 3.5vh;
+  justify-content: space-around;
   color: white;
   background-color: #ff0000;
   border-radius: 5px;
   margin-top: -50px;
+  height: 3.2vh;
 }
 
 .messages {
@@ -90,7 +90,7 @@ a {
 }
 
 #message {
-  font-size: 16px;
+  font-size: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -205,6 +205,10 @@ input {
 
   #form {
     width: 80vw;
+  }
+
+  .close-button > span {
+    margin-left: -100px;
   }
 
   input {

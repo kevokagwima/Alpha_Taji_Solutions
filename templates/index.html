@@ -25,15 +25,18 @@
               SIGN IN</a>
           </button>
         </div>
-        <div class="login">
-          <img class="img" src="../static/styles/Images/login.png">
-          <p id="login-username">{{ name }}</p>
-        </div>
         <div class="burger">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
         </div>
+        <div class="login">
+          <img class="img" src="../static/styles/Images/login.png">
+          <p id="login-username">{{ name }}</p>
+        </div>
+    </div>
+    <div class="profile">
+      <a href="{{ url_for('logout') }}">Logout</a>
     </div>
     <div class="container-1">
       <div id="content">

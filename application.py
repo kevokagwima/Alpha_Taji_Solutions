@@ -81,7 +81,7 @@ def register():
     return render_template("signup.html")
 
   if len(password) < 5:
-    flash("password must be more than 5 characters long")
+    flash("assword must be more than 5 characters long")
     return render_template("signup.html")
 
   if password1 != password:
@@ -107,6 +107,10 @@ def authenticate():
     return render_template("signin.html", message="Invalid credentials")
 
   return render_template("index.html", name=username)
+
+@app.route('/logout')
+def logout():
+  return render_template("signin.html", success="Logged out successfully")
 
 @app.route('/download')
 def download_file():

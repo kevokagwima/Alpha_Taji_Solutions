@@ -81,7 +81,7 @@ def register():
     return render_template("signup.html")
 
   if len(password) < 5:
-    flash("assword must be more than 5 characters long")
+    flash("Password must be more than 5 characters long")
     return render_template("signup.html")
 
   if password1 != password:

@@ -15,24 +15,24 @@
           <a id="links" href="{{ url_for('contact') }}">CONTACT</a>
           <a id="links" href="{{ url_for('faq') }}">FAQ</a>
         </div>
-        <div class="user">
-          <button id="sign-up">
-            <a id="btn-link" href="{{ url_for('signup') }}">
+          <div class="login">
+            <img class="img" src="../static/styles/Images/login.png">
+            <p id="login-username">{{ name }}</p>
+          </div>
+          <div class="user">
+            <button id="sign-up">
+              <a id="btn-link" href="{{ url_for('signup') }}">
               SIGN UP</a>
-          </button> 
-          <button id="sign-in">
-            <a id="btn-link" href="{{ url_for('login') }}">
+            </button> 
+            <button id="sign-in">
+              <a id="btn-link" href="{{ url_for('login') }}">
               SIGN IN</a>
-          </button>
-        </div>
+            </button>
+          </div>
         <div class="burger">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
-        </div>
-        <div class="login">
-          <img class="img" src="../static/styles/Images/login.png">
-          <p id="login-username">{{ name }}</p>
         </div>
     </div>
     <div class="profile">

@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": "c:\\Users\\Kevin\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "editor.fontSize": 16,
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingDelete": "always",
+    "editor.autoClosingOvertype": "always",
+    "editor.autoClosingQuotes": "always"
+}

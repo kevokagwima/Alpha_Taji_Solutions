@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/faq.css') }}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Redressed&display=swap" rel="stylesheet">
-    <title>Alpha Taji Solutions | Faq</title>
-  </head>
+{% extends 'base.html' %}
+
+{% block title %}
+  Alpha Taji Solutions | Faq
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/faq.css') }}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Redressed&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
   <body id="body">
-    <div class="nav">
-      <a href="{{ url_for('index') }}">
-        <img id="image" src="../static/styles/Images/logo1.PNG">
-      </a>
-    </div>
     <div class="section-center">
       <h4 id="faq">faq</h4>
       <hr id="hr">
@@ -279,4 +280,4 @@
     </div>
     <script src="{{ url_for('static', filename='js/faq.js') }}"></script>
   </body>
-</html>
+{% endblock %}

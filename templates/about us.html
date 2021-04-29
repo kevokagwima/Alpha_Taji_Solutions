@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/about us.css') }}">
-    <title>Alpha Taji Solutions | About Us</title>
-  </head>
-  <body id="body">
-    <div class="nav">
-      <a href="{{ url_for('index') }}">
-        <img id="image" src="../static/styles/Images/logo1.PNG">
-      </a>
-        <div class="links">
-          <a id="links" href="{{ url_for('services') }}">SERVICES</a>
-          <a id="links" href="{{ url_for('team') }}">MANAGEMENT TEAM</a>
-          <a id="links" href="{{ url_for('merchendise') }}">MERCHENDISE</a>
-        </div>
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-    </div>
+{% extends 'base.html' %}
+
+{% block title %}
+  Alpha Taji Solutions | About Us
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/about us.css') }}">
+{% endblock %}
+
+{% block content %}
+  <a id="links" href="{{ url_for('services') }}">SERVICES</a>
+  <a id="links" href="{{ url_for('team') }}">MANAGEMENT TEAM</a>
+  <a id="links" href="{{ url_for('merchendise') }}">MERCHENDISE</a>
+{% endblock %}
+
+{% block body %}
+<body id="body">
     <div class="container-1">
       <div id="container-1">
         <h4 id="heading">Sacco Overview</h4>
@@ -80,4 +77,4 @@
     </div>
     <script src="{{ url_for('static', filename='js/about.js') }}"></script>
   </body>
-</html>
+{% endblock %}

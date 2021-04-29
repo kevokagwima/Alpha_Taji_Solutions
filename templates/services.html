@@ -1,28 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/services.css') }}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Reggae+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Alpha Taji Solutions | Services</title>
-  </head>
+{% extends 'base.html' %}
+
+{% block title %}
+  Alpha Taji Solutions | Services
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/services.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Reggae+One&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  <a id="links" href="{{ url_for('about') }}">ABOUT US</a>
+  <a id="links" href="{{ url_for('contact') }}">CONTACT</a>
+  <a id="links" href="{{ url_for('faq') }}">FAQ</a>
+{% endblock %}
+
+{% block body %}
   <body id="body">
-    <div class="nav">
-      <a href="{{ url_for('index') }}">
-        <img id="image" src="../static/styles/Images/logo1.png">
-      </a>
-      <div class="links">
-        <a id="links" href="{{ url_for('about') }}">ABOUT US</a>
-        <a id="links" href="{{ url_for('contact') }}">CONTACT</a>
-        <a id="links" href="{{ url_for('faq') }}">FAQ</a>
-      </div>
-      <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-    </div>
     <h4 id="heading">Our Products and Services</h4>
     <hr id="line">
     <p id="text">This is the core Sacco function that enables members to save and be able to access credit facilities. We encourage our members to save for the future. Adherence to the 1/3 government basic salary rule applies to all loan products. A member can only qualify for one loan product at a time. All loans are disbursed through the members' accounts. The following are our products and services:</p>
@@ -175,5 +171,4 @@
       <h4>Copyright &copy; ALPHA TAJI SOLUTIONS LTD 2021. All Rights Reserved</h4>
     </div>
     <script src="{{ url_for('static', filename='js/services.js') }}"></script>
-  </body>
-</html>
+{% endblock %}

@@ -1,43 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
-    <title>Alpha Taji Solutions | Home</title>
-  </head>
+{% extends 'base.html' %}
+
+{% block title %}
+  Alpha Taji Solutions | Home
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Reggae+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+{% endblock %}
+
+{% block content %}
+  <a id="links" href="{{ url_for('about') }}">ABOUT US</a>
+  <a id="links" href="{{ url_for('services') }}">SERVICES</a>
+  <a id="links" href="{{ url_for('contact') }}">CONTACT</a>
+  <a id="links" href="{{ url_for('faq') }}">FAQ</a>
+{% endblock %}
+
+{% block body %}
   <body id="body">
-    <div class="nav">
-      <img id="image" src="../static/styles/Images/logo1.PNG">
-        <div class="links">
-          <a id="links" href="{{ url_for('about') }}">ABOUT US</a>
-          <a id="links" href="{{ url_for('services') }}">SERVICES</a>
-          <a id="links" href="{{ url_for('contact') }}">CONTACT</a>
-          <a id="links" href="{{ url_for('faq') }}">FAQ</a>
-        </div>
-          <div class="login">
-            <img class="img" src="../static/styles/Images/login.png">
-            <p id="login-username">{{ name }}</p>
-          </div>
-          <div class="user">
-            <button id="sign-up">
-              <a id="btn-link" href="{{ url_for('signup') }}">
-              SIGN UP</a>
-            </button> 
-            <button id="sign-in">
-              <a id="btn-link" href="{{ url_for('login') }}">
-              SIGN IN</a>
-            </button>
-          </div>
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-    </div>
-    <div class="profile">
-      <a href="{{ url_for('logout') }}">Logout</a>
-    </div>
     <div class="container-1">
       <div id="content">
         <h1 id="heading">ALPHA TAJI SOLUTIONS</h1>
@@ -69,5 +52,4 @@
       <button class="top"><a href="#body">^</a></button>
     </div>
     <Script src="{{ url_for('static', filename='js/index.js') }}"></Script>
-  </body>
-</html>
+{% endblock %}

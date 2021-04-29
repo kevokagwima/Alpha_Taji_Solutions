@@ -15,6 +15,10 @@ body {
   background-size: cover;
 }
 
+.login {
+  margin-left: 50rem;
+}
+
 .nav {
   display: flex;
   justify-content: center;

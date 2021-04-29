@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/contact.css') }}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Reggae+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Alpha Taji Solutions | Contact Us</title>
-  </head>
+{% extends 'base.html' %}
+
+{% block title %}
+  Alpha Taji Solutions | Contact Us
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/contact.css') }}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Reggae+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block body %}
   <body>
-    <div class="nav">
-      <a href="{{ url_for('index') }}"><img id="image" src="../static/styles/Images/logo1.png"></a>
-    </div>
     <div class="container-1">
       <div class="mini-container-1">
         <div class="overlay">
@@ -52,4 +55,5 @@
       </div>
     </div>
   </body>
-</html>
+  <Script src="{{ url_for('static', filename='js/contact.js') }}"></Script>
+{% endblock %}

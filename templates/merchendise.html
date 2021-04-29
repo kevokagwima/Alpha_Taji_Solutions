@@ -1,27 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/merchendise.css') }}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Reggae+One&display=swap" rel="stylesheet">
-    <title>Alpha Taji Solutions | Merchendise</title>
-  </head>
+{% extends 'base.html' %}
+
+{% block title %}
+  Alpha Taji Solutions | Merchendise
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/merchendise.css') }}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Reggae+One&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  <a id="links" href="#hoodies">HOODIES</a>
+  <a id="links" href="#bags">BAGS</a>
+  <a id="links" href="#polos">POLOS</a>
+  <a id="links" href="#pillow">PILLOWS</a>
+  <a id="links" href="#masks">MASKS</a>
+{% endblock %}
+
+{% block body %}
   <body id="body">
-    <div class="nav">
-      <a href="{{ url_for('index') }}"><img id="image" src="../static/styles/Images/logo1.png"></a>
-        <div class="links">
-          <a id="links" href="#hoodies">HOODIES</a>
-          <a id="links" href="#bags">BAGS</a>
-          <a id="links" href="#polos">POLOS</a>
-          <a id="links" href="#pillow">PILLOWS</a>
-          <a id="links" href="#masks">MASKS</a>
-        </div>
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-    </div>
     <h1 id="hoodies">Hoodies</h1>
     <hr>
     <div class="bag">
@@ -152,4 +151,4 @@
     </div>
     <script src="{{ url_for('static', filename='js/merchendise.js') }}"></script>
   </body>
-</html>
+{% endblock %}

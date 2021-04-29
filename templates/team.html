@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/team.css') }}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Reggae+One&display=swap" rel="stylesheet">
-    <title>Alpha Taji Solutions | Management Team</title>
-  </head>
+{% extends 'base.html' %}
+
+{% block title %}
+  Alpha Taji Solutions | Management Team
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/team.css') }}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Reggae+One&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
   <body>
-    <div class="nav">
-      <a href="{{ url_for('index') }}"><img id="image" src="../static/styles/Images/logo1.png"></a>
-    </div>
     <h1 id="heading">MANAGEMENT TEAM</h1>
       <hr id="hr">
       <p id="text">The Management Staff are charged with the responsibility of running the daily activities of the sacco. This team implements the policies and guidelines set up by the Board of Directors.</p>
@@ -75,4 +78,5 @@
       <h4>Copyright &copy; ALPHA TAJI SOLUTIONS LTD 2021. All Rights Reserved</h4>
     </div>
   </body>
-</html>
+  <Script src="{{ url_for('static', filename='js/team.js') }}"></Script>
+{% endblock %}

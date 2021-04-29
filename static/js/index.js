@@ -15,6 +15,6 @@ window.addEventListener('scroll', ()=> {
   profile.classList.remove('show-profile')
 })
 
-img.addEventListener('mouseover', ()=> {
-  profile.classList.add('show-profile')
+img.addEventListener('click', ()=> {
+  profile.classList.toggle('show-profile')
 })

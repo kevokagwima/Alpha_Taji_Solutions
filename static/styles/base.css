@@ -1,5 +1,5 @@
 .user {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   width: 13vw;
@@ -39,7 +39,7 @@
 }
 
 .login {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 8vh;

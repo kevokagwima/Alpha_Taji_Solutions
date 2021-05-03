@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, send_file, flash
+from flask import Flask, render_template, request, send_file, flash, redirect, url_for
 from models import user, db
+from form import registration
 
 app = Flask(__name__)
 
@@ -37,61 +38,28 @@ def team():
 def merchendise():
   return render_template("merchendise.html")
 
-@app.route("/signup")
+@app.route("/signup", methods=["POST", "GET"])
 def signup():
-  return render_template("signup.html")
+  form = registration()
+  if form.validate_on_submit():
+    member = user(
+      first_name = form.first_name.data,
+      second_name = form.second_name.data,
+      last_name = form.last_name.data,
+      email = form.email_address.data,
+      phone_number = form.phone_number.data,
+      username = form.username.data,
+      password = form.password.data,
+      )
+    db.session.add(member)
+    db.session.commit()
+    return redirect(url_for('login'))
 
-@app.route("/register", methods=["POST"])
-def register():
-  firstname = request.form.get("fname")
-  secondname = request.form.get("sname")
-  lastname = request.form.get("lname")
-  email = request.form.get("email")
-  phone = request.form.get("phone")
-  username = request.form.get("username")
-  password = request.form.get("password")
-  password1 = request.form.get("password1")
-  
-  member = (
-    user(first_name=firstname,second_name=secondname,last_name=lastname,email=email,phone_number=phone,username=username,password=password
-    )
-  )
+  if form.errors != {}:
+    for err_msg in form.errors.values():
+      flash(f'There was an error creating the user: {err_msg}', category='danger')
 
-  email_exists = db.session.query(user).filter_by(email=email).first()
-  if email_exists is not None:
-    flash("Email already exists. Please try another email")
-    return render_template("signup.html")
-
-  phonenumber_exists = db.session.query(user).filter_by(phone_number=phone).first()
-  if phonenumber_exists is not None:
-    flash("Phone number already exists. Please try another Phone number")
-    return render_template("signup.html")
-  
-  username_exists = db.session.query(user).filter_by(username=username).first()
-  if username_exists is not None:
-    flash("Username already exists. Please try another username")
-    return render_template("signup.html")
-
-  if len(phone) != 10:
-    flash("Enter a valid Phone Number")
-    return render_template("signup.html")
-  
-  if len(username) < 5:
-    flash("Username must be more than 5 characters long")
-    return render_template("signup.html")
-
-  if len(password) < 5:
-    flash("Password must be more than 5 characters long")
-    return render_template("signup.html")
-
-  if password1 != password:
-    flash("Passwords do not match")
-    return render_template("signup.html")
-
-  db.session.add(member)
-  
-  db.session.commit()
-  return render_template("signin.html", success="User registred.")
+  return render_template("signup.html", form=form)
 
 @app.route("/signin")
 def login():

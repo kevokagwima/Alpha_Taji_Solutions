@@ -1,50 +1,50 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/signup.css') }}">
-    <title>Alpha Taji Solutions | Sign Up</title>
-  </head>
-  <body>
-    <div class="nav">
-      <img id="image" src="../static/styles/Images/logo1.PNG">
-    </div>
-    <h4 id="heading">SIGN UP</h4>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        {% for category, message in messages %}
-          <div class="message">
-            <p id="message">{{ message }}</p>
-            <button class="close-button">
-              <span>&times;</span>
-            </button>
-          </div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
-    <div class="container-1">
-      <form method="POST" action="{{ url_for('register') }}">
-        <div id="form">
-        <input type="text" name="fname" autocomplete="off" required placeholder="Enter your First Name"><br>
-        <input type="text" name="sname" autocomplete="off" required placeholder="Enter your Second Name"><br>
-        <input type="text" name="lname" autocomplete="off" required placeholder="Enter your Last Name"><br>
-        <input type="email" name="email" autocomplete="off" required placeholder="Enter your Email Address"><br>
-        <input type="number" name="phone" autocomplete="off" required placeholder="Enter your Phone Number"><br>
-        <input type="text" name="username" id="username" placeholder="Enter Username" autocomplete="off" required><br>
-        <input type="password" name="password" id="password" placeholder="Enter Password" autocomplete="off" required><br>
-        <input type="password" name="password1" id="password" placeholder="Confirm Password" autocomplete="off" required><br>
-          <button class="btn" type="submit">
-            <span class="button--text">SIGN UP</span>
-          </button>
-        </div>
-      </form>
-    </div>
-    <div class="box">
-      <p id="text">If already a member proceed to login</p>
-      <a id="link" href="{{ url_for('login')}}">Login</a>
-    </div>
-    <div class="footer">
-      <h4>Copyright &copy; ALPHA TAJI SOLUTIONS LTD 2021. All Rights Reserved</h4>
-    </div>
-    <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
-  </body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+  Alpha Taji Solutions | Sign Up
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/signup.css') }}">
+{% endblock %}
+
+{% block body %}
+<body>
+  <h4 id="heading">SIGN UP</h4>
+  <div class="container-1">
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div id="form">
+        {{ form.first_name(placeholder="Enter first name") }}
+        <br>
+        {{ form.second_name(placeholder="Enter second name") }}
+        <br>
+        {{ form.last_name(placeholder="Enter last name") }}
+        <br>
+        {{ form.email_address(placeholder="Enter Email Address") }}
+        <br>
+        {{ form.phone_number(placeholder="Enter Phone Number") }}
+        <br>
+        {{ form.username(placeholder="Enter Username") }}
+        <br>
+        {{ form.password(placeholder="Enter Passoword") }}
+        <br>
+        {{ form.password1(placeholder="Confirm your password") }}
+        <br>
+        <button class="btn" type="submit">
+          <span class="button--text">SIGN UP</span>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="box">
+    <p id="text">If already a member proceed to login</p>
+    <a id="link" href="{{ url_for('login')}}">Login</a>
+  </div>
+  <div class="footer">
+    <h4>Copyright &copy; ALPHA TAJI SOLUTIONS LTD 2021. All Rights Reserved</h4>
+  </div>
+  <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
+</body>
+{% endblock %}

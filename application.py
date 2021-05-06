@@ -1,8 +1,16 @@
-from flask import Flask, render_template, request, send_file, flash, redirect, url_for
+from flask import Flask, render_template, send_file, flash, redirect, url_for
 from models import user, db
-from form import registration
+from form import registration, signin
+from flask_login import LoginManager, login_user, login_manager, logout_user
 
 app = Flask(__name__)
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+
+@login_manager.user_loader
+def load_user(user_id):
+    return user.query.get(int(user_id))
 
 app.config["SQLALCHEMY_DATABASE_URI"] = ('mssql://KEVINKAGWIMA/alphataji?driver=sql server?trusted_connection=yes')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -49,7 +57,7 @@ def signup():
       email = form.email_address.data,
       phone_number = form.phone_number.data,
       username = form.username.data,
-      password = form.password.data,
+      passwords = form.password.data,
       )
     db.session.add(member)
     db.session.commit()
@@ -61,24 +69,23 @@ def signup():
 
   return render_template("signup.html", form=form)
 
-@app.route("/signin")
+@app.route("/signin", methods=["POST", "GET"])
 def login():
-  return render_template("signin.html")
-
-@app.route("/authenticate", methods=["POST"])
-def authenticate():
-  username = request.form.get("username")
-  password = request.form.get("password")
-
-  check_user = db.session.query(user).filter_by(username=username, password=password).first()
-  if check_user is None:
-    return render_template("signin.html", message="Invalid credentials")
-
-  return render_template("index.html", name=username)
+  form = signin()
+  if form.validate_on_submit():
+    member = user.query.filter_by(username=form.username.data).first()
+    if member and member.check_password_correction(attempted_password=form.password.data):
+      login_user(member)
+      flash(f'Success! You are logged in as: {member.username}', category='success')
+      return redirect(url_for('index'))
+    else:
+      flash(f'Invalid login credentials', category='danger')
+  return render_template("signin.html", form=form)
 
 @app.route('/logout')
 def logout():
-  return render_template("signin.html", success="Logged out successfully")
+  logout_user()
+  return redirect(url_for('login'))
 
 @app.route('/download')
 def download_file():

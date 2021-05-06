@@ -13,17 +13,14 @@ Alpha Taji Solutions | Sign In
 <body>
   <h4 id="heading">SIGN IN</h4>
   <div class="container-1">
-    <form action="{{ url_for('authenticate') }}", method="POST">
+    <form method="POST">
+      {{ form.hidden_tag() }}
       <div id="form">
-        <div class="message">
-          <p class="message">{{ message }}</p>
-        </div>
-        <div class="success">
-          <p id="message">{{success}}</p>
-        </div>
         <h4 id="header">Confirm Your Identity</h4>
-        <input type="text" name="username" id="username" placeholder="Enter username" required autocomplete="off"><br>
-        <input type="password" name="password" id="password" placeholder="Enter password" required autocomplete="off"><br>
+        {{ form.username(placeholder="Username") }}
+        <br>
+        {{ form.password(placeholder="Passwword") }}
+        <br>
         <button class="btn" type="submit">
           <span class="button--text">SIGN IN</span>
         </button>

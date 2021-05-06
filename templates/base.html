@@ -3,6 +3,7 @@
 <head>
   {% block head %}
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/CSS/bootstrap.css') }}">
   <title>
     {% block title %}{% endblock %}
   </title>
@@ -15,20 +16,23 @@
     <div class="links">
       {% block content %} {% endblock %}
     </div>
-    <div class="login">
-      <img class="img" src="../static/styles/Images/login.png">
-      <p id="login-username">{{ name }}</p>
-    </div>
-    <div class="user">
-      <button id="sign-up">
-        <a id="btn-link" href="{{ url_for('signup') }}">
+    {% if current_user.is_authenticated %}
+      <div class="login">
+        <img class="img" src="../static/styles/Images/login.png">
+        <p id="login-username">{{ current_user.username }}</p>
+      </div>
+    {% else %}
+      <div class="user">
+        <button id="sign-up">
+          <a id="btn-link" href="{{ url_for('signup') }}">
         SIGN UP</a>
-      </button> 
-      <button id="sign-in">
+        </button> 
+        <button id="sign-in">
         <a id="btn-link" href="{{ url_for('login') }}">
         SIGN IN</a>
-      </button>
-    </div>
+        </button>
+      </div>
+    {% endif %}
     <div class="profile">
       <a href="{{ url_for('logout') }}">Logout</a>
     </div>
@@ -43,7 +47,7 @@
     {% if messages %}
       <div class="tops">
         {% for category, message in messages %}
-        <div class="alert">
+        <div class="alert alert-{{category}}">
           {{ message }}
         </div>
       {% endfor %}

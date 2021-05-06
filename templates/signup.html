@@ -16,17 +16,17 @@
     <form method="POST">
       {{ form.hidden_tag() }}
       <div id="form">
-        {{ form.first_name(placeholder="Enter first name") }}
+        {{ form.first_name(placeholder="Enter first name", autocomplete="off") }}
         <br>
-        {{ form.second_name(placeholder="Enter second name") }}
+        {{ form.second_name(placeholder="Enter second name", autocomplete="off") }}
         <br>
-        {{ form.last_name(placeholder="Enter last name") }}
+        {{ form.last_name(placeholder="Enter last name", autocomplete="off") }}
         <br>
-        {{ form.email_address(placeholder="Enter Email Address") }}
+        {{ form.email_address(placeholder="Enter Email Address", autocomplete="off") }}
         <br>
-        {{ form.phone_number(placeholder="Enter Phone Number") }}
+        {{ form.phone_number(placeholder="Enter Phone Number", autocomplete="off") }}
         <br>
-        {{ form.username(placeholder="Enter Username") }}
+        {{ form.username(placeholder="Enter Username", autocomplete="off") }}
         <br>
         {{ form.password(placeholder="Enter Passoword") }}
         <br>

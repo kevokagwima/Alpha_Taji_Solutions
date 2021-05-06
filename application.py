@@ -85,6 +85,7 @@ def login():
 @app.route('/logout')
 def logout():
   logout_user()
+  flash(f'Logged out successfully', category='success')
   return redirect(url_for('login'))
 
 @app.route('/download')

@@ -1,4 +1,5 @@
 from flask import Flask, render_template, send_file, flash, redirect, url_for
+from flask_login.utils import login_required
 from models import user, db
 from form import registration, signin
 from flask_login import LoginManager, login_user, login_manager, logout_user
@@ -23,26 +24,32 @@ def index():
   return render_template("index.html")
 
 @app.route("/contact")
+@login_required
 def contact():
   return render_template("contact.html")
 
 @app.route("/about us")
+@login_required
 def about():
   return render_template("about us.html")
 
 @app.route("/services")
+@login_required
 def services():
   return render_template("services.html")
 
 @app.route("/faq")
+@login_required
 def faq():
   return render_template("faq.html")
 
 @app.route("/Management Team")
+@login_required
 def team():
   return render_template("team.html")
 
 @app.route("/merchendise")
+@login_required
 def merchendise():
   return render_template("merchendise.html")
 
@@ -61,6 +68,7 @@ def signup():
       )
     db.session.add(member)
     db.session.commit()
+    flash(f'User registerd successfully!', category='success')
     return redirect(url_for('login'))
 
   if form.errors != {}:
@@ -83,52 +91,62 @@ def login():
   return render_template("signin.html", form=form)
 
 @app.route('/logout')
+@login_required
 def logout():
   logout_user()
   flash(f'Logged out successfully', category='success')
   return redirect(url_for('login'))
 
 @app.route('/download')
+@login_required
 def download_file():
   path = "Loan Forms/branch-loan-form.pdf"
   return send_file(path, as_attachment=True)
 
 @app.route('/download2')
+@login_required
 def download_file_2():
   path = "Loan Forms/golden-loan-form.pdf"
   return send_file(path, as_attachment=True)
 
 @app.route('/download3')
+@login_required
 def download_file_3():
   path = "Loan Forms/express-loan-form.pdf"
   return send_file(path, as_attachment=True)
 
 @app.route('/download4')
+@login_required
 def download_file_4():
   path = "Loan Forms/normal-loan-form.pdf"
   return send_file(path, as_attachment=True)
 
 @app.route('/download5')
+@login_required
 def download_file_5():
   path = "Loan Forms/supersaver-loan-form.pdf"
   return send_file(path, as_attachment=True)
 
 @app.route('/download6')
+@login_required
 def download_file_6():
   path = "Loan Forms/super-loan-form.pdf"
   return send_file(path, as_attachment=True)
 
 @app.route('/download7')
+@login_required
 def download_file_7():
   path = "Loan Forms/msingi-loan-form.pdf"
   return send_file(path, as_attachment=True)
 
 @app.route('/download8')
+@login_required
 def download_file_8():
   path = "Loan Forms/dividends advance-loan-form.pdf"
   return send_file(path, as_attachment=True)
 
 @app.route('/download9')
+@login_required
 def download_file_9():
   path = "Loan Forms/benovelent fund-form.pdf"
   return send_file(path, as_attachment=True)

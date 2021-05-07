@@ -7,6 +7,10 @@ body {
   background: #3d3d3d;
 }
 
+.login {
+  display: none;
+}
+
 .nav {
   background: #212121;
   justify-content: center;

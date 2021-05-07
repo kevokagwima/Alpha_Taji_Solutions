@@ -24,32 +24,26 @@ def index():
   return render_template("index.html")
 
 @app.route("/contact")
-@login_required
 def contact():
   return render_template("contact.html")
 
 @app.route("/about us")
-@login_required
 def about():
   return render_template("about us.html")
 
 @app.route("/services")
-@login_required
 def services():
   return render_template("services.html")
 
 @app.route("/faq")
-@login_required
 def faq():
   return render_template("faq.html")
 
 @app.route("/Management Team")
-@login_required
 def team():
   return render_template("team.html")
 
 @app.route("/merchendise")
-@login_required
 def merchendise():
   return render_template("merchendise.html")
 

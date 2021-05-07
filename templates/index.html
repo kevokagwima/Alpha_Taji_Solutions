@@ -39,6 +39,13 @@
         <source src="../static/styles/images/video.mp4" type="video/mp4">
       </video>
     </div>
+    {% if current_user.is_authenticated %}
+    <div class="subscribe">
+      <div class="box1">
+        <h4 id="subscribe">Our news letter will be sent to your email</h4>
+      </div>
+    </div>
+    {% else %}
     <div class="subscribe">
       <div class="box1">
         <h4 id="subscribe">Subscribe to our newsletter by becoming a member</h4>
@@ -47,6 +54,7 @@
         </button>
       </div>
     </div>
+    {% endif %}
     <div class="footer">
       <h4>Copyright &copy; ALPHA TAJI SOLUTIONS LTD 2021. All Rights Reserved</h4>
       <button class="top"><a href="#body">^</a></button>

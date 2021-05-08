@@ -117,20 +117,6 @@ hr {
   font-family: monospace;
 }
 
-.footer {
-  display: flex;
-  background-color: rgb(2, 28, 77);
-  height: 100px;
-  color: rgb(255, 255, 255);
-  justify-content: center;
-  align-items: center;
-  margin-right: -8px;
-  margin-left: -8px;
-  font-size: 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 2px;
-}
-
 .top {
   display: flex;
   justify-content: center;

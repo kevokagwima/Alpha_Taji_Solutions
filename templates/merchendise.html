@@ -145,10 +145,10 @@
         <h4>White mask</h4>
       </div>
     </div>
-    <div class="footer">
-      <h4>Copyright &copy; ALPHA TAJI SOLUTIONS LTD 2021. All Rights Reserved</h4>
-      <a id="link" href="{{ url_for('contact') }}">CONTACT US</a>
-    </div>
     <script src="{{ url_for('static', filename='js/merchendise.js') }}"></script>
   </body>
 {% endblock %}
+
+{% block footer %}
+  <a id="link" href="{{ url_for('contact') }}">CONTACT US</a>
+{% endblock %}  

@@ -55,9 +55,9 @@
       </div>
     </div>
     {% endif %}
-    <div class="footer">
-      <h4>Copyright &copy; ALPHA TAJI SOLUTIONS LTD 2021. All Rights Reserved</h4>
-      <button class="top"><a href="#body">^</a></button>
-    </div>
     <Script src="{{ url_for('static', filename='js/index.js') }}"></Script>
+{% endblock %}
+
+{% block footer %}
+  <button class="top"><a href="#body">^</a></button>
 {% endblock %}

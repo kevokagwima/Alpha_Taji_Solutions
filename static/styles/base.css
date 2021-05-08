@@ -25,6 +25,17 @@ body {
   width: 13vw;
 }
 
+.burger {
+  display: none;
+}
+
+.burger > div {
+  height: 3px;
+  width: 25px;
+  background-color: rgb(6, 216, 16);
+  margin: 5.2px;
+}
+
 #sign-up {
   background: rgb(243, 239, 2);
   padding: 5px;
@@ -111,19 +122,87 @@ body {
   visibility: visible;
 }
 
+.footer {
+  display: flex;
+  background-color: rgb(2, 28, 77);
+  height: 80px;
+  color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  margin-right: -8px;
+  margin-left: -8px;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+}
+
 .tops {
   margin-top: 64px;
   margin-bottom: -50px;
   margin-left: -10px;
   width: 100vw;
-  color: white;
-  font-size: 16px;
-  font-family: monospace;
 }
 
-.alert {
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media screen and (max-width: 800px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  #image {
+    width: 18rem;
+    height: 4rem;
+    margin-left: -10px;
+  }
+
+  .img {
+    width: 5rem;
+    margin-left: 20px;
+  }
+
+  .links, .user {
+    position: absolute;
+    border-radius: 0px;
+    right: 0;
+    display: flex;
+    background-color: aliceblue;
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+  }
+
+  .links {
+    flex-direction: column;
+    height: 100vh;
+    width: 50vw;
+    top: 63px;
+  }
+
+  .user {
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 20px;
+    width: 50vw;
+    top: 64.8px;
+  }
+
+  #sign-up {
+    width: 100px;
+  }
+
+  #sign-in {
+    width: 100px;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+    margin-left: 30px;
+  }
+
+  .footer > h4 {
+    text-align: center;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
 }

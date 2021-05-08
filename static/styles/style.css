@@ -41,17 +41,6 @@ a {
   color: rgb(1, 175, 255);
 }
 
-.burger {
-  display: none;
-}
-
-.burger > div {
-  height: 3px;
-  width: 25px;
-  background-color: rgb(6, 216, 16);
-  margin: 5.2px;
-}
-
 .container-1 {
   margin-top: 50px;
   background-image: url(../styles/Images/Entry\ background.jpg);
@@ -195,20 +184,6 @@ a {
   color: aliceblue;
 }
 
-.footer {
-  display: flex;
-  background-color: rgb(2, 28, 77);
-  height: 80px;
-  color: rgb(255, 255, 255);
-  justify-content: center;
-  align-items: center;
-  margin-right: -8px;
-  margin-left: -8px;
-  font-size: 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 2px;
-}
-
 .top {
   position: absolute;
   margin-left: 80vw;
@@ -236,10 +211,6 @@ a {
     width: 18rem;
     height: 4rem;
     margin-left: -10px;
-  }
-
-  #login-username {
-    display: none;
   }
 
   .img {

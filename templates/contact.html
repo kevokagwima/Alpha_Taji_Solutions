@@ -46,14 +46,14 @@
         </form>
       </div>
     </div>
-    <div class="footer">
-      <h4>Feel free to contact us through our social media platforms</h4>
-      <div class="social">
-        <a id="social" href="https://www.facebook.com/alphatajisoultions" target="_blank" class="fa fa-facebook"></a>
-        <a id="social" href="https://twitter.com/ALPHATAJISOLUT1" target="_blank" class="fa fa-twitter"></a>
-        <a id="social" href="https://www.instagram.com/alphatajisolutions/" target="_blank" class="fa fa-instagram"></a>
-      </div>
-    </div>
   </body>
   <Script src="{{ url_for('static', filename='js/contact.js') }}"></Script>
+{% endblock %}
+
+{% block footer %}
+  <div class="social">
+    <a id="social" href="https://www.facebook.com/alphatajisoultions" target="_blank" class="fa fa-facebook"></a>
+    <a id="social" href="https://twitter.com/ALPHATAJISOLUT1" target="_blank" class="fa fa-twitter"></a>
+    <a id="social" href="https://www.instagram.com/alphatajisolutions/" target="_blank" class="fa fa-instagram"></a>
+  </div>
 {% endblock %}

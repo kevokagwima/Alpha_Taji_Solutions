@@ -6,17 +6,16 @@ from flask_login import LoginManager, login_user, login_manager, logout_user
 
 app = Flask(__name__)
 
+app.config["SQLALCHEMY_DATABASE_URI"] = ('mssql://KEVINKAGWIMA/alphataji?driver=sql server?trusted_connection=yes')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = 'f4cedd9fad0d4aae6af66788'
+db.init_app(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(user_id):
     return user.query.get(int(user_id))
-
-app.config["SQLALCHEMY_DATABASE_URI"] = ('mssql://KEVINKAGWIMA/alphataji?driver=sql server?trusted_connection=yes')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'f4cedd9fad0d4aae6af66788'
-db.init_app(app)
 
 @app.route("/")
 @app.route("/home")
@@ -78,7 +77,7 @@ def login():
     member = user.query.filter_by(username=form.username.data).first()
     if member and member.check_password_correction(attempted_password=form.password.data):
       login_user(member)
-      flash(f'Success! You are logged in as: {member.username}', category='success')
+      flash(f'Success! You are logged in: welcome {member.username}😀', category='success')
       return redirect(url_for('index'))
     else:
       flash(f'Invalid login credentials', category='danger')
